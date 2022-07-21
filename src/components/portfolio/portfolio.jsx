@@ -16,6 +16,7 @@ const[portfoliodata,setportfoliodata]=useState(Portfolioitem);
 <img src={item.image}/>
 </div>
 <h3>{item.title}</h3>
+<p>{item.p}</p>
 <div className='portfolio_cta'>
 <a href={item.github} target="_blank" className='btn'>Github</a>
 <a href={item.demo} target="_blank" className='btn btn-primary'>Live Demo</a>

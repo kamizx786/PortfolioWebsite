@@ -3,10 +3,9 @@ import "./contact.css"
 import ContactData from './contactapi';
 import emailjs from 'emailjs-com';
 import swal from 'sweetalert';
-import Recaptcha from 'react-recaptcha';
 
 const Contact = () => {
-const[data,setData]=useState(ContactData);
+const[data]=useState(ContactData);
 const [Name,setName]=useState("");
 const form=useRef();
 const sendEmail = (e) => {
@@ -16,9 +15,7 @@ const sendEmail = (e) => {
 e.target.reset();
 swal(`Hi ${Name} Your Email Has Been Sent a SuccessFully`);
 }
-var onChange=(value)=>{
-    console.log("loaded",value);
-}
+
   return (
     <section id='contact'>
 <h5>Get in Touch</h5>
@@ -31,7 +28,7 @@ data.map((item)=>{
 <article className='contact-option'>
 <i className='icon'>{item.icon}</i>
 <h4>{item.h4}</h4>
-<a href={item.link} target="_blank">Send a Message</a>
+<a href={item.link} rel="noreferrer" target="_blank">Send a Message</a>
 </article>
     );
 })
